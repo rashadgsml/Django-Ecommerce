@@ -1,0 +1,52 @@
+
+    <!--Card-->
+<div class="card">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
+        alt="">
+      <a href="{{ item.get_absolute_url }}">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <!--Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-center">
+      <!--Category & Title-->
+      <a href="{{ item.get_absolute_url }}" class="grey-text">
+        <h5>{{item.get_category_display}}</h5>
+      </a>
+      <h5>
+        <strong>
+          <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{item.title}}
+              {% if item.label == 'P' %}
+              <span class="badge badge-pill primary-color">SALE</span>
+              {% elif item.label == 'S' %}
+              <span class="badge badge-pill secondary-color">BEST SELLER</span>
+              {% elif item.label == 'D' %}
+              <span class="badge badge-pill danger-color">NEW</span>
+              {% endif %}
+          </a>
+        </strong>
+      </h5>
+
+      <h4 class="font-weight-bold blue-text">
+        
+        {% if item.discount_price %}
+        <strong>{{item.discount_price}}$</strong>
+        {% else %}
+        <strong>{{item.price}}$</strong>
+        {% endif %}
+          
+        
+      </h4>
+
+    </div>
+    <!--Card content-->
+
+  </div>
+  <!--Card-->
+
+    
