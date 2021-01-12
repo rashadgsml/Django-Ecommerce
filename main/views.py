@@ -106,7 +106,6 @@ class PaymentView(View):
             payment.save()
 
             # assign the payment to the order
-
             order_items = order.items.all()
             order_items.update(ordered=True)
             for item in order_items:
@@ -304,7 +303,7 @@ class RequestRefundView(View):
                 # store the refund
                 refund = Refund()
                 refund.order = order
-                refund.reason = messages
+                refund.reason = message
                 refund.email = email
                 refund.save()
 
